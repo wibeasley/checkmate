@@ -84,6 +84,7 @@ Other basetypes:
 \code{\link{checkEnvironment}()},
 \code{\link{checkFactor}()},
 \code{\link{checkFunction}()},
+\code{\link{checkInteger64}()},
 \code{\link{checkIntegerish}()},
 \code{\link{checkInteger}()},
 \code{\link{checkList}()},

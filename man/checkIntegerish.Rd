@@ -241,6 +241,7 @@ Other basetypes:
 \code{\link{checkFactor}()},
 \code{\link{checkFormula}()},
 \code{\link{checkFunction}()},
+\code{\link{checkInteger64}()},
 \code{\link{checkInteger}()},
 \code{\link{checkList}()},
 \code{\link{checkLogical}()},

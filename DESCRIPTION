@@ -24,6 +24,7 @@ Imports:
 Suggests:
     R6,
     bit,
+    bit64,
     fastmatch,
     data.table (>= 1.9.8),
     devtools,
@@ -75,6 +76,7 @@ Collate:
     'checkFunction.R'
     'checkInt.R'
     'checkInteger.R'
+    'checkInteger64.R'
     'checkIntegerish.R'
     'checkList.R'
     'checkLogical.R'

@@ -1,3 +1,6 @@
+# Version 2.*
+* Added `checkInteger64`, based on `bit64::integer64`.  (#171 @wibeasley)
+
 # Version 1.9.5
 * Coercion now only affects double vectors.
 * Improved error message for type detection in `*List`.
