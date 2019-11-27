@@ -1,24 +1,26 @@
 context("checkInteger64")
 
 test_that("checkInteger64", {
-  myobj = 1L
+  myobj = bit64::as.integer64(1)
   expect_succ_all(Integer64, myobj)
+  myobj = 1L
+  expect_fail_all(Integer64, myobj) # Int32
   myobj = 1
-  expect_fail_all(Integer64, myobj)
+  expect_fail_all(Integer64, myobj) # double/float
 
-  expect_true(testInteger64(integer(0)))
-  expect_false(testInteger64(NULL))
-  expect_false(testInteger64(TRUE))
-  expect_false(testInteger64(FALSE))
-  expect_true(testInteger64(NA))
+  expect_true(testInteger64(bit64::as.integer64(0)))
+  expect_false(testInteger64(bit64::as.integer64(NULL)))
+  expect_false(testInteger64(bit64::as.integer64(TRUE)))
+  expect_false(testInteger64(bit64::as.integer64(FALSE)))
+  expect_true(testInteger64(bit64::as.integer64(NA)))
   expect_false(testInteger64(NA, any.missing = FALSE))
   expect_false(testInteger64(NA, all.missing = FALSE))
-  expect_true(testInteger64(1L))
-  expect_true(testInteger64(1:3, any.missing = FALSE, min.len = 1L, max.len = 3L))
-  expect_false(testInteger64(1:3, any.missing = FALSE, len = 5))
-  expect_true(testInteger64(1:3, lower = 1L, upper = 3L))
-  expect_false(testInteger64(1:3, lower = 5))
-  expect_false(testInteger64(1:3, upper = 1))
+  expect_true(testInteger64(bit64::as.integer64(1L)))
+  expect_true(testInteger64(bit64::as.integer64(1:3), any.missing = FALSE, min.len = 1L, max.len = 3L))
+  expect_false(testInteger64(bit64::as.integer64(1:3), any.missing = FALSE, len = 5))
+  expect_true(testInteger64(bit64::as.integer64(1:3), lower = 1L, upper = 3L))
+  expect_false(testInteger64(bit64::as.integer64(1:3), lower = 5))
+  expect_false(testInteger64(bit64::as.integer64(1:3), upper = 1))
 
   expect_error(assertInteger64(1), "Integer64")
 })
