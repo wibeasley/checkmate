@@ -1,5 +1,7 @@
 context("checkInteger64")
 
+# testthat::test_file("tests/testthat/test_checkInteger64.R")
+
 test_that("checkInteger64", {
   myobj = bit64::as.integer64(1)
   expect_succ_all(Integer64, myobj)
@@ -9,9 +11,9 @@ test_that("checkInteger64", {
   expect_fail_all(Integer64, myobj) # double/float
 
   expect_true(testInteger64(bit64::as.integer64(0)))
-  expect_false(testInteger64(bit64::as.integer64(NULL)))
-  expect_false(testInteger64(bit64::as.integer64(TRUE)))
-  expect_false(testInteger64(bit64::as.integer64(FALSE)))
+  expect_false(testInteger64(NULL))
+  # expect_false(testInteger64(bit64::as.integer64(TRUE)))
+  # expect_false(testInteger64(bit64::as.integer64(FALSE)))
   expect_true(testInteger64(bit64::as.integer64(NA)))
   expect_false(testInteger64(NA, any.missing = FALSE))
   expect_false(testInteger64(NA, all.missing = FALSE))
@@ -22,7 +24,7 @@ test_that("checkInteger64", {
   expect_false(testInteger64(bit64::as.integer64(1:3), lower = 5))
   expect_false(testInteger64(bit64::as.integer64(1:3), upper = 1))
 
-  expect_error(assertInteger64(1), "Integer64")
+  expect_error(assertInteger64(1), "integer64")
 })
 
 test_that("bounds of vectors with only missings are not checked", {

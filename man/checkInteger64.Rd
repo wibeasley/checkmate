@@ -11,6 +11,7 @@
 \title{Check if an argument is a bit64::integer64}
 \usage{
 checkInteger64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -25,6 +26,7 @@ checkInteger64(
 )
 
 check_integer64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -39,6 +41,7 @@ check_integer64(
 )
 
 assertInteger64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -50,11 +53,12 @@ assertInteger64(
   sorted = FALSE,
   names = NULL,
   null.ok = FALSE,
-  .var.name = vname(lower),
+  .var.name = vname(x),
   add = NULL
 )
 
 assert_integer64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -66,11 +70,12 @@ assert_integer64(
   sorted = FALSE,
   names = NULL,
   null.ok = FALSE,
-  .var.name = vname(lower),
+  .var.name = vname(x),
   add = NULL
 )
 
 testInteger64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -85,6 +90,7 @@ testInteger64(
 )
 
 test_integer64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -99,6 +105,7 @@ test_integer64(
 )
 
 expect_integer64(
+  x,
   lower = -Inf,
   upper = Inf,
   any.missing = TRUE,
@@ -115,6 +122,9 @@ expect_integer64(
 )
 }
 \arguments{
+\item{x}{[any]\cr
+Object to check.}
+
 \item{lower}{[\code{numeric(1)}]\cr
 Lower value all elements of \code{x} must be greater than or equal to.}
 
@@ -165,9 +175,6 @@ See \code{\link[testthat]{expect_that}}.}
 \item{label}{[\code{character(1)}]\cr
 Name of the checked object to print in messages. Defaults to
 the heuristic implemented in \code{\link{vname}}.}
-
-\item{x}{[any]\cr
-Object to check.}
 }
 \value{
 Depending on the function prefix:
